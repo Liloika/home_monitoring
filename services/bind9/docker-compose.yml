@@ -1,4 +1,3 @@
-version: "3"
 services:
   bind9:
     container_name: bind-dns
@@ -10,3 +9,9 @@ services:
       - ./config:/etc/bind
       - ./cache:/var/cache/bind
     restart: unless-stopped
+    networks:
+      - local_network
+
+networks:
+  local_network:
+    external: true
