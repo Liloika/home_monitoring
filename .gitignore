@@ -1,3 +1,7 @@
 services/grafana/.env
 services/keycloak/.env
 services/keycloak/postgres_data
+services/bind9/.env
+services/nginx/config
+services/bind9/cache
+services/bind9/config
