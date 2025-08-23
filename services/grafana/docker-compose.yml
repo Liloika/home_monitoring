@@ -35,15 +35,15 @@ services:
     ports:
       - "3000:3000"
     dns:
-      - 192.168.0.13
+      - ${KEYCLOAK_IP}
     extra_hosts:
-      - "keycloak.home.lan:192.168.0.13"
+      - "keycloak.home.lan:${KEYCLOAK_IP}"
     environment:
 #      GF_SERVER_HTTP_PORT: ${GF_SERVER_HTTP_PORT}
       GF_SERVER_ROOT_URL: ${GF_SERVER_ROOT_URL}
       GF_LOG_LEVEL: ${GF_LOG_LEVEL}
-      GF_AUTH_BASIC_ENABLED: false
-      GF_AUTH_DISABLE_LOGIN_FORM: true
+      GF_AUTH_BASIC_ENABLED: true
+      GF_AUTH_DISABLE_LOGIN_FORM: false
       GF_AUTH_GENERIC_OAUTH_ENABLED: ${GF_AUTH_GENERIC_OAUTH_ENABLED}
       GF_AUTH_GENERIC_OAUTH_NAME: ${GF_AUTH_GENERIC_OAUTH_NAME}
       GF_AUTH_GENERIC_OAUTH_ALLOW_SIGN_UP: ${GF_AUTH_GENERIC_OAUTH_ALLOW_SIGN_UP}
@@ -61,6 +61,3 @@ services:
       - ./grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
       - ./grafana/datasources:/etc/grafana/provisioning/datasources:ro
 
-#networks:
- # default:
-  #  name: monitoring
