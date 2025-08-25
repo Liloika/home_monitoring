@@ -13,3 +13,13 @@ scrape_configs:
     metrics_path: /metrics
     static_configs:
       - targets: ['keycloak:9000']
+
+  - job_name: server
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['${SERVER_IP}:9100']
+
+  - job_name: node-host
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['${HOST_IP}:9100']

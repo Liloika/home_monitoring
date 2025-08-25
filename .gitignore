@@ -5,3 +5,4 @@ services/bind9/.env
 services/nginx/config
 services/bind9/cache
 services/bind9/config
+services/grafana/prometheus/.env
