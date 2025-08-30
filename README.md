@@ -5,3 +5,4 @@
   - Keycloak
   - Nginx 
   - Bind9
+  - Gitea

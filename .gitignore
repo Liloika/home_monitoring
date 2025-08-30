@@ -6,3 +6,6 @@ services/nginx/config
 services/bind9/cache
 services/bind9/config
 services/grafana/prometheus/.env
+services/gitea/.env
+services/gitea/gitea
+services/gitea/postgres
