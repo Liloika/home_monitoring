@@ -9,3 +9,8 @@ services/grafana/prometheus/.env
 services/gitea/.env
 services/gitea/gitea
 services/gitea/postgres
+services/pki/rootCA.key
+services/pki/rootCA.pem  
+services/pki/rootCA.srl   
+services/pki/v3.ext  
+services/pki/v3-grafana.home.lan.ext

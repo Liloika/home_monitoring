@@ -10,6 +10,7 @@ services:
       - ./config/sites-available:/etc/nginx/sites-available:ro
       - ./config/sites-enabled:/etc/nginx/sites-enabled:ro
       - ./config/.htpasswd:/etc/nginx/.htpasswd:ro
+      - ./config/pki:/etc/nginx/pki:ro
     restart: always
     networks:
       - local_network
