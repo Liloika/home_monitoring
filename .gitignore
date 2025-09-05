@@ -14,3 +14,4 @@ services/pki/rootCA.pem
 services/pki/rootCA.srl   
 services/pki/v3.ext  
 services/pki/v3-grafana.home.lan.ext
+services/thelounge/thelounge
