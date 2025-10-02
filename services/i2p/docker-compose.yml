@@ -1,0 +1,13 @@
+services:
+  i2p-tor:
+    image: divax/i2p:current-i2p-tor
+    container_name: i2p-tor
+    environment:
+      - PORT_TOR=9050
+      - PORT_HTTP_PROXY=4444
+      - ENABLE_HTTPPROXY=1
+    ports:
+      - "7170:7070"
+      - "4544:4444"
+      - "9950:9050"
+    restart: always

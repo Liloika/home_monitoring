@@ -6,3 +6,4 @@
   - Nginx 
   - Bind9
   - Gitea
+  - I2p
