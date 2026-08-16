@@ -1,13 +1,21 @@
+version: '3.8'
+
 services:
-  i2p-tor:
-    image: divax/i2p:current-i2p-tor
-    container_name: i2p-tor
-    environment:
-      - PORT_TOR=9050
-      - PORT_HTTP_PROXY=4444
-      - ENABLE_HTTPPROXY=1
+  i2pd:
+    image: purplei2p/i2pd:latest
+    container_name: i2pd
     ports:
-      - "7170:7070"
-      - "4544:4444"
-      - "9950:9050"
+      # Веб-консоль
+      - "7070:7070"
+      # HTTP-прокси для .i2p сайтов
+      - "4444:4444"
+      # SOCKS-прокси
+      - "4447:4447"
+      # Ваш eepsite (сайт)
+      - "8080:8080"
+    volumes:
+      # Монтируем всю директорию с конфигами
+      - ./i2pd_data:/home/i2pd/.i2pd
+      # Директория для вашего сайта
+      - ./my-website:/var/www/i2p
     restart: always

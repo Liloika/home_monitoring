@@ -7,4 +7,9 @@ services:
     restart: always
     volumes:
       - ./thelounge:/var/opt/thelounge
+    networks:
+      - local_network
 
+networks:
+  local_network:
+    external: true
