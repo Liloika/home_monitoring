@@ -15,3 +15,11 @@ services/pki/rootCA.srl
 services/pki/v3.ext  
 services/pki/v3-grafana.home.lan.ext
 services/thelounge/thelounge
+services/shop/.env
+services/pki/*.key
+services/pki/*.pem
+services/pki/*.srl
+services/pki/*.csr
+services/pki/*.crt
+services/pki/v3-*.ext
+services/nginx/config/pki/

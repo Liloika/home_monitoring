@@ -1,0 +1,38 @@
+services:
+  shop-db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - shop-db-data:/var/lib/postgresql/data
+    networks:
+      - local_network
+
+  shop-backend:
+    build: ./backend
+    container_name: shop-backend
+    restart: always
+    depends_on:
+      - shop-db
+    env_file: .env
+    networks:
+      - local_network
+
+  shop-frontend:
+    build: ./frontend
+    container_name: shop-frontend
+    restart: always
+    depends_on:
+      - shop-backend
+    networks:
+      - local_network
+
+volumes:
+  shop-db-data:
+
+networks:
+  local_network:
+    external: true

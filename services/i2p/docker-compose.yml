@@ -5,17 +5,11 @@ services:
     image: purplei2p/i2pd:latest
     container_name: i2pd
     ports:
-      # Веб-консоль
       - "7070:7070"
-      # HTTP-прокси для .i2p сайтов
       - "4444:4444"
-      # SOCKS-прокси
       - "4447:4447"
-      # Ваш eepsite (сайт)
       - "8080:8080"
     volumes:
-      # Монтируем всю директорию с конфигами
       - ./i2pd_data:/home/i2pd/.i2pd
-      # Директория для вашего сайта
       - ./my-website:/var/www/i2p
     restart: always
